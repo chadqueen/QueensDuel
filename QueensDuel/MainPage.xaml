@@ -8,6 +8,24 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Button x:Name="StartButton" Content="Start" 
+            Margin="0,12,0,0" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Bottom" 
+            Height="105" Width="370" 
+            FontFamily="Segoe-UI" 
+            FontSize="48" 
+            Click="OnStart"/>
+        <TextBlock Text="Queen's"
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               Margin="0,53,0,0" TextWrapping="Wrap" 
+               FontFamily="Segoe-UI" FontSize="48"/>
+        <TextBlock Text="Duel" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Top" 
+               Margin="0,103,0,0" 
+               TextWrapping="Wrap" 
+               FontFamily="Segoe-UI" FontSize="48"/>
     </Grid>
 </Page>
