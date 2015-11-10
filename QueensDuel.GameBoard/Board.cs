@@ -31,6 +31,29 @@
             }
         }
 
+        public bool ColorHasPiecesInBattleSquare(PieceColor pieceColor)
+        {
+            return this.CountColorPiecesInBattleSquare(pieceColor) > 0;
+        }
+
+        public int CountColorPiecesInBattleSquare(PieceColor pieceColor)
+        {
+            var pieceCount = 0;
+
+            for (int row = outerBoarderSquareCount + 1; row <= rowCount - outerBoarderSquareCount; row++)
+            {
+                for (int column = outerBoarderSquareCount + 1; column <= columnCount - outerBoarderSquareCount; column++)
+                {
+                    if (this.Positions[row - 1, column - 1].ContainsPiece() && this.Positions[row - 1, column - 1].Piece.Color == pieceColor)
+                    {
+                        pieceCount++;
+                    }
+                }
+            }
+
+            return pieceCount;
+        }
+
         public static bool IsPositionInBattleSquare(BoardPosition boardPosition)
         {
             if (boardPosition.Row >= outerBoarderSquareCount + 1 && boardPosition.Row <= rowCount - outerBoarderSquareCount)

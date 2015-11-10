@@ -130,5 +130,35 @@ namespace QueensDuel.GameBoard.Tests
             Assert.IsFalse(Board.IsPositionInBattleSquare(new BoardPosition(7, 4)));
             Assert.IsFalse(Board.IsPositionInBattleSquare(new BoardPosition(8, 6)));
         }
+
+        [TestMethod]
+        public void Verifies_If_Piece_Color_Has_Pieces_In_BattleSquare()
+        {
+            // arrange
+            var board = new Board();
+
+            // act
+            var orangeHasPiecesInBattleSquareOnInitialization = board.ColorHasPiecesInBattleSquare(PieceColor.Orange);
+            var greenHasPiecesInBattleSquareOnInitialization = board.ColorHasPiecesInBattleSquare(PieceColor.Green);
+
+            // assert
+            Assert.IsFalse(orangeHasPiecesInBattleSquareOnInitialization);
+            Assert.IsFalse(greenHasPiecesInBattleSquareOnInitialization);
+        }
+
+        [TestMethod]
+        public void Counts_Number_Of_Pieces_A_Piece_Color_Has_In_BattleSquare()
+        {
+            // arrange
+            var board = new Board();
+
+            // act
+            var orangePieceCountInBattleSquareOnInitialization = board.CountColorPiecesInBattleSquare(PieceColor.Orange);
+            var greenPieceCountInBattleSquareOnInitialization = board.CountColorPiecesInBattleSquare(PieceColor.Green);
+
+            // assert
+            Assert.AreEqual(0, orangePieceCountInBattleSquareOnInitialization);
+            Assert.AreEqual(0, greenPieceCountInBattleSquareOnInitialization);
+        }
     }
 }
